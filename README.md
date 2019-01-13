@@ -4,15 +4,15 @@
 
 - This is sample CakePHP v3.7 application with React.
 - What interesting is the react is non-SPA (non single page application).
-- This means when you run `npm run build` the webpack will create multiple `bundle.js`
+- This means when you run `npm run build` the webpack will create multiple `bundle.js` located [here](https://github.com/hassifmohd/cakephp-react/tree/master/app/webroot/js)
 - If you want to read which code I change when putting React into this CakePHP, please refer [this PR](https://github.com/hassifmohd/cakephp-react/pull/2/files)
 
 ## The concept behind it
 
 - app folder is CakePHP folder
 - frontend is where the React is installed
-- In this example I create a module called Events. Then the index and view for index is using React
-- Data from react is not API. But just a php echo json_encode
+- In this example I create a module called Events. Then the [index](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/index.ctp#L20) and [view](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L23) for index is using React
+- Data from react is not API, but just a `php echo json_encode` example [here](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L21)
 
 # Installation CakePHP
 
@@ -63,6 +63,7 @@ Once again, if the setup is correct. You can access `http://localhost:8080/cakep
 - In this project. I make `events/index` and `events/view` as react
 - So you will see `app/src/Template/Events/index.ctp` is different
 - The bundle.js is different which is `app/webroot/js/events-index.js`
+- If you want to look at the code, please compare [this](https://github.com/hassifmohd/cakephp-react/blob/installation/frontend/src/events-index/index.js) and [this](https://github.com/hassifmohd/cakephp-react/blob/installation/frontend/webpack.config.js#L6)
 
 ```
 cd cakephp-react/frontend
@@ -75,7 +76,7 @@ To develop, run `npm run start` change anything at `frontend/src/events-index/in
 
 ## Development: Add new module
 
-Let say you want to make events/add to use react. Change `frontend/webpack.config.js` according to the `entry`. I am using multiple entry point. Therefore when you develop webpack will automatically create new file at `/app/webroot/js/event-add.js`
+Let say you want to make `events/add` to use react. Change `frontend/webpack.config.js` according to the `entry`. I am using multiple entry point. Therefore when you develop the webpack will automatically create new file at `/app/webroot/js/event-add.js`
 
 ## Build
 
