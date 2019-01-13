@@ -10,6 +10,9 @@ const config = {
         path: path.resolve(__dirname, '../app/webroot/js/'),
         filename: '[name].js'
     },
+    watchOptions: {
+        poll: true
+    },
     module: {
         rules: [
             {
