@@ -1,4 +1,4 @@
-# CakePHP React
+# CakePHP+React
 
 ## About this project
 
