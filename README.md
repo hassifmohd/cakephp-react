@@ -13,6 +13,8 @@
 - frontend is where the React is installed
 - In this example I create a module called Events. Then the [index](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/index.ctp#L20) and [view](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L23) for index is using React
 - Data from react is not API, but just a `php echo json_encode` example [here](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L21)
+- I am using webpack with multiple entry
+- I create my own structure where. At CakePHP, if you have `events/index` then at react there will be `src/events-index` and the javascript will located at `webroot/js/events-index.js`
 
 # Installation CakePHP
 
