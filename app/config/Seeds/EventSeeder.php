@@ -16,16 +16,16 @@ class EventSeeder extends AbstractSeed
     {
         $data = [
             [
-                'title' => 'Food Truck Challenge',
-                'image' => 'http://res.cloudinary.com/hksqkdlah/image/upload/w_1200,h_630,c_fill/ATK%20Food%20Truck/CAN_ATKFoodTruck_5391_23x9',
-                'description' => 'Sample great food, collaborate, and compete!',
+                'title' => 'Stella Beats インストア公演【1部】',
+                'image' => 'https://a.sofmap.com/ec/topics/4230/yDmgLeac.jpg',
+                'description' => 'メンバーは米満梨湖、前田美咲、新穂貴城、小倉月奏、佐藤葵の5人組。 デビューから数回のメンバーチェンジを経て、2018年4月22日から現在の体制となる。',
                 'created' => date('Y-m-d H:i:s'),
                 'modified' => date('Y-m-d H:i:s'),
             ],
             [
-                'title' => 'Master Chef',
-                'image' => 'http://www.3qrecruitment.ie/wp-content/uploads/2018/06/why-you-should-be-a-chef-in-dublin-by-three-q-recruitment-for-catering-780x430.jpg',
-                'description' => 'Who will be the best php cake chef in the world?',
+                'title' => 'Ikeuta Hearts イケてるハーツ',
+                'image' => 'https://a.sofmap.com/ec/topics/4230/QXhY0uEq.jpg',
+                'description' => 'イケてるハーツは、2014年9月7日に結成された日本の女性アイドルグループである。 コンセプトは「ネガティブなハートを『歌』と『ダンス』と『元気な笑顔』で『イケてるハート』へとポジティブ変換してもらうこと」。',
                 'created' => date('Y-m-d H:i:s'),
                 'modified' => date('Y-m-d H:i:s'),
             ],

@@ -15,30 +15,9 @@
 </nav>
 <div class="events view large-9 medium-8 columns content">
     <h3><?= h($event->title) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Title') ?></th>
-            <td><?= h($event->title) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($event->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Created') ?></th>
-            <td><?= h($event->created) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Modified') ?></th>
-            <td><?= h($event->modified) ?></td>
-        </tr>
-    </table>
-    <div class="row">
-        <h4><?= __('Image') ?></h4>
-        <?= $this->Html->image($event->image, ['width' => 400]); ?>
-    </div>
-    <div class="row">
-        <h4><?= __('Description') ?></h4>
-        <?= $this->Text->autoParagraph(h($event->description)); ?>
-    </div>
+    <div id="root"></div>
 </div>
+<script>
+    var EVENT = '<?= json_encode($event); ?>';
+</script>
+<?= $this->Html->script('events-view') ?>
