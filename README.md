@@ -9,10 +9,15 @@
 
 ## The concept behind it
 
-- app folder is CakePHP folder
-- frontend is where the React is installed
-- In this example I create a module called Events. Then the [index](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/index.ctp#L20) and [view](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L23) for index is using React
-- Data from react is not API, but just a `php echo json_encode` example [here](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp#L21)
+If you have `events/view` in CakePHP controller and you want to change it into React. Below is the list of files that is related
+| Files / Folders | Descriptions |
+|--|--|
+| [app](https://github.com/hassifmohd/cakephp-react/tree/master/app) folder | CakePHP application folder |
+| [frontend](https://github.com/hassifmohd/cakephp-react/tree/master/frontend) folder | This is where I install the React application |
+| [app/src/Template/Events/view.ctp](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp) | Put React related code |
+| [frontend/webpack.config.js](https://github.com/hassifmohd/cakephp-react/blob/master/frontend/webpack.config.js) | Add new entry point and target location to transpile the code. **IMPORTANT!** |
+| [frontend/src/events-view/index.js](https://github.com/hassifmohd/cakephp-react/blob/master/frontend/src/events-view/index.js) | Your React application code. Run `npm run start` for development |
+| [app/webroot/js/events-view.js](https://github.com/hassifmohd/cakephp-react/blob/master/app/webroot/js/events-view.js) | This is example of the transpiled code used by `view.ctp` when you run `npm run build` |
 
 # Installation CakePHP
 
