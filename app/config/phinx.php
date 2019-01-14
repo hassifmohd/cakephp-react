@@ -22,6 +22,7 @@ return [
             "user" => $_ENV['DATABASE_USERNAME'],
             "pass" => $_ENV['DATABASE_PASSWORD'],
             "port" => $_ENV['DATABASE_PORT'],
+            "charset" => "utf8",
         ],
     ],
 ];
