@@ -29,6 +29,20 @@ class EventSeeder extends AbstractSeed
                 'created' => date('Y-m-d H:i:s'),
                 'modified' => date('Y-m-d H:i:s'),
             ],
+            [
+                'title' => 'DASH BEATS インストア公演【1部】',
+                'image' => 'https://a.sofmap.com/ec/topics/4230/2R0acPe4.jpg',
+                'description' => 'イケてるハーツは、2014年9月7日に結成された日本の女性アイドルグループである。 コンセプトは「ネガティブなハートを『歌』と『ダンス』と『元気な笑顔』で『イケてるハート』へとポジティブ変換してもらうこと」。',
+                'created' => date('Y-m-d H:i:s'),
+                'modified' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'title' => 'ぼみ1stフルアルバム「９」',
+                'image' => 'https://a.sofmap.com/ec/topics/4230/1hvWU2Wp.jpg',
+                'description' => 'イケてるハーツは、2014年9月7日に結成された日本の女性アイドルグループである。 コンセプトは「ネガティブなハートを『歌』と『ダンス』と『元気な笑顔』で『イケてるハート』へとポジティブ変換してもらうこと」。',
+                'created' => date('Y-m-d H:i:s'),
+                'modified' => date('Y-m-d H:i:s'),
+            ],
         ];
 
         $events = $this->table('events');
