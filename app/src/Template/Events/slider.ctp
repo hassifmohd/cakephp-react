@@ -6,9 +6,12 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Slider'), ['action' => 'slider']) ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['action' => 'add']) ?></li>
+        <li class="heading">
+            <?=__('Actions')?>
+        </li>
+        <li>
+            <?=$this->Html->link(__('New Event'), ['action' => 'add'])?>
+        </li>
     </ul>
 </nav>
 <div class="events index large-9 medium-8 columns content">
@@ -18,4 +21,4 @@
 <script>
     var EVENTS = '<?= json_encode($events); ?>';
 </script>
-<?= $this->Html->script('events-index') ?>
+<?= $this->Html->script('events-slider') ?>

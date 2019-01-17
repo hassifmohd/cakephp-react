@@ -26,6 +26,18 @@ class EventsController extends AppController
     }
 
     /**
+     * Slider method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function slider()
+    {
+        $events = $this->paginate($this->Events);
+
+        $this->set(compact('events'));
+    }
+
+    /**
      * View method
      *
      * @param string|null $id Event id.
@@ -35,7 +47,7 @@ class EventsController extends AppController
     public function view($id = null)
     {
         $event = $this->Events->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
 
         $this->set('event', $event);
@@ -71,7 +83,7 @@ class EventsController extends AppController
     public function edit($id = null)
     {
         $event = $this->Events->get($id, [
-            'contain' => []
+            'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
