@@ -21,4 +21,4 @@
 <script>
     var EVENTS = '<?= json_encode($events); ?>';
 </script>
-<?= $this->Html->script('events-slider') ?>
+<?= $this->Html->script('react/events-slider') ?>
