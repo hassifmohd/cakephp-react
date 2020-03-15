@@ -1,30 +1,19 @@
 # CakePHP+React
 
-## About this project
+![](demo/demo.gif)
 
-- This is sample CakePHP v3.7 application with React.
+## About this project & The concept behind it
+
+- This is sample project using CakePHP v3.7 with React.
 - What interesting is the react is non-SPA (non single page application).
-- This means when you run `npm run build` the webpack will create multiple `bundle.js` located [here](https://github.com/hassifmohd/cakephp-react/tree/master/app/webroot/js)
-- If you want to read which code I change when putting React into this CakePHP, please refer [this PR](https://github.com/hassifmohd/cakephp-react/pull/2/files)
+- This means when you run `npm run build` the webpack will create multiple `bundle.js` located at `/app/webroot/js/react`
+- Then your `.ctp` will load the JS file `<?= $this->Html->script('react/bundle.js') ?>`
 
-## The concept behind it
+# Installation
 
-If you have `events/view` in CakePHP controller and you want to change it into React. Below is the list of files that is related
+## 1. Download and install CakePHP
 
-| Files / Folders | Descriptions |
-|--|--|
-| [app](https://github.com/hassifmohd/cakephp-react/tree/master/app) folder | CakePHP application folder |
-| [frontend](https://github.com/hassifmohd/cakephp-react/tree/master/frontend) folder | This is where I install the React application |
-| [app/src/Template/Events/view.ctp](https://github.com/hassifmohd/cakephp-react/blob/master/app/src/Template/Events/view.ctp) | Put React related code |
-| [frontend/webpack.config.js](https://github.com/hassifmohd/cakephp-react/blob/master/frontend/webpack.config.js) | Add new entry point and target location to transpile the code. **IMPORTANT!** |
-| [frontend/src/events-view/index.js](https://github.com/hassifmohd/cakephp-react/blob/master/frontend/src/events-view/index.js) | Your React application code. Run `npm run start` for development |
-| [app/webroot/js/events-view.js](https://github.com/hassifmohd/cakephp-react/blob/master/app/webroot/js/events-view.js) | This is example of the transpiled code used by `view.ctp` when you run `npm run build` |
-
-# Installation CakePHP
-
-## Start
-
-First is to install CakePHP
+First is to install CakePHP, react installation will be done last
 
 ```
 git clone git@github.com:hassifmohd/cakephp-react.git //download this sample
@@ -32,58 +21,51 @@ cd cakephp-react/app //go into the cakephp folder
 composer install //download the cakephp
 ```
 
-## Setup CakePHP database
+## 2. Setup CakePHP configuration
 
-After install CakePHP you need to setup the database first
+After install CakePHP you need to setup the enviroment.
+
+If you setup everything correctly. You should be able to access the website without any problems. 
+
+Mine is `http://localhost:8080/cakephp-react/app/`
 
 ```
 cd cakephp-react/app/config
 cp .env.default .env //create a .env file from the template given
 vim .env //update you configuration
-vim app.php //update Datasources to use env(...) that you just set
 ```
 
-## Test CakePHP is running
+## 3. Create table and sample data
 
-If you setup everything correctly. You should be able to access the website now. Mine is `http://localhost:8080/cakephp-react/app/`
-
-## Create table using migrations and sample seed data
-
-Create the table database using CakePHP migrations
+Create the table database and seed using CakePHP migrations
 
 ```
 cd cakephp-react/app/
 bash bin/cake migrations migrate //create table
-vendor/bin/phinx seed:run -s EventSeeder -c config/phinx.php -e development //create sample data
+bash vendor/bin/phinx seed:run -s EventSeeder //create sample data
 ```
 
-## Test CakePHP is running
+## 4. Download and install React
 
-Once again, if the setup is correct. You can access `http://localhost:8080/cakephp-react/app/events/add`
-
-# React development
-
-## React development located at frontend folder
-
-- located at frontend folder
-- In this project. I make `events/index` and `events/view` as react
-- So you will see `app/src/Template/Events/index.ctp` is different
-- The bundle.js is different which is `app/webroot/js/events-index.js`
-- If you want to look at the code, please compare [this](https://github.com/hassifmohd/cakephp-react/blob/installation/frontend/src/events-index/index.js) and [this](https://github.com/hassifmohd/cakephp-react/blob/installation/frontend/webpack.config.js#L6)
+The last step is to install React
 
 ```
-cd cakephp-react/frontend
-npm install //install anything important. start the project
+cd cakephp-react/frontend //go to React folder
+npm install //install react
+npm run build //to compile the application
 ```
 
-## Development
+## 5. Installation complete, checkout the demo
 
-To develop, run `npm run start` change anything at `frontend/src/events-index/index.js`
+If everything setup correctly, you can checkout slider demo at http://localhost:8080/cakephp-react/app/events/slider
 
-## Development: Add new module
+## 6. Understanding the files & folders structure
 
-Let say you want to make `events/add` to use react. Change `frontend/webpack.config.js` according to the `entry`. I am using multiple entry point. Therefore when you develop the webpack will automatically create new file at `/app/webroot/js/event-add.js`
+Besides CakePHP MVC, below is the additional structure
 
-## Build
-
-To build simply run `npm run build`
+| Files & Folders Location | Descriptions |
+|--|--|
+| `/app` | CakePHP application |
+| `/frontend` | React application. To develop, run `npm run start` |
+| `/frontend/webpack.config.js` | CakePHP+React main configuration is here |
+| `/frontend/src/...` | Put your react codes here. Run `npm run build` to compile. Results will be at `/app/webroot/js/react` |
