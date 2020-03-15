@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
+    "minimist": "^1.2.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
