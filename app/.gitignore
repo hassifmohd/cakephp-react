@@ -6,6 +6,9 @@
 /tmp/*
 /vendor/*
 
+# CakePHP React bundle location
+/webroot/js/react/*
+
 # OS generated files #
 ######################
 .DS_Store

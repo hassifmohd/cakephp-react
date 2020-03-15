@@ -18,4 +18,4 @@
 <script>
     var EVENTS = '<?= json_encode($events); ?>';
 </script>
-<?= $this->Html->script('events-index') ?>
+<?= $this->Html->script('react/events-index') ?>

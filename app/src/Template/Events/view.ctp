@@ -20,4 +20,4 @@
 <script>
     var EVENT = '<?= json_encode($event); ?>';
 </script>
-<?= $this->Html->script('events-view') ?>
+<?= $this->Html->script('react/events-view') ?>

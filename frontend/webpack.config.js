@@ -8,7 +8,7 @@ const config = {
         'events-slider': path.resolve(__dirname, 'src/events-slider/index.js')
     },
     output: {
-        path: path.resolve(__dirname, '../app/webroot/js/'),
+        path: path.resolve(__dirname, '../app/webroot/js/react/'),
         filename: '[name].js'
     },
     watchOptions: {
